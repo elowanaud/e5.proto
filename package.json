@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "drizzle-kit push && next start",
     "typecheck": "tsc --noEmit",
     "code-quality": "biome check",
     "code-quality:fix": "biome check --fix",
