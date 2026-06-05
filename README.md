@@ -47,7 +47,7 @@
 Clone the repository with a shallow history, remove the original Git metadata, and initialize a fresh repository without creating any commit:
 
 ```bash
-printf "App name: " && read -r app && test -n "$app" && git clone --depth 1 git@github.com:elowanaud/e5.proto.git "$app" && cd "$app" && rm -rf .git && git init && pnpm install && cp .env.example .env && BETTER_AUTH_SECRET="$(openssl rand -base64 32)" perl -0pi -e 's|^BETTER_AUTH_SECRET=.*|BETTER_AUTH_SECRET=$ENV{BETTER_AUTH_SECRET}|m' .env
+printf "App name: " && read -r app && test -n "$app" && git clone --depth 1 git@github.com:elowanaud/e5.proto.git "$app" && cd "$app" && rm -rf .git && git init && pnpm install && cp .env.example .env && BETTER_AUTH_SECRET="$(openssl rand -base64 32)" perl -0pi -e 's|^BETTER_AUTH_SECRET=.*|BETTER_AUTH_SECRET=$ENV{BETTER_AUTH_SECRET}|m' .env && git add . && git commit -m "initial commit"
 ```
 
 > [!NOTE]
